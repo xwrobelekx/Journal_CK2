@@ -42,7 +42,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="R5z-xe-5Zg" kind="show" id="Zfx-hU-vaz"/>
+                                    <segue destination="R5z-xe-5Zg" kind="show" identifier="toDetailView" id="Zfx-hU-vaz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -147,6 +147,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ji-Ax-UMm"/>
+        <segue reference="Zfx-hU-vaz"/>
     </inferredMetricsTieBreakers>
 </document>
