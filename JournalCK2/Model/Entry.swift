@@ -8,6 +8,7 @@
 
 import Foundation
 import CloudKit
+
 class Entry {
     
     //MARK: - CloudKit Keys
@@ -20,12 +21,12 @@ class Entry {
     
     //MARK: - Properties
     let title: String
-    let notes: String
+    let notes: String?
     let date: Date
     
     
     //MARK: - Designated Initializer
-    init(title: String, notes: String, date: Date = Date()){
+    init(title: String, notes: String?, date: Date = Date()){
         self.title = title
         self.notes = notes
         self.date = date
@@ -34,16 +35,16 @@ class Entry {
     
     //MARK: - Cloud Kit Record
     //#1 create CKRecord computed property
-    var cloudKitRecord : CKRecord = {
+    var cloudKitRecord : CKRecord {
         //create record
         let record = CKRecord(recordType: Entry.TypeKey)
         //#3 convert properties to record
-        record.setValue("title", forKey: Entry.titleKey)
-        record.setValue("notes", forKey: Entry.notesKey)
-        record.setValue("date", forKey: Entry.dateKey)
+        record.setValue(self.title, forKey: Entry.titleKey)
+        record.setValue(self.notes, forKey: Entry.notesKey)
+        record.setValue(self.date, forKey: Entry.dateKey)
         
         return record
-    }()
+    }
     
     
     //MARK: - Failable Initializer
@@ -51,7 +52,7 @@ class Entry {
     convenience init?(cloudKitRecord: CKRecord) {
         //#5 unpack record, making usre all properties are correct type
         guard let title = cloudKitRecord[Entry.titleKey] as? String,
-            let notes = cloudKitRecord[Entry.notesKey] as? String,
+            let notes = cloudKitRecord[Entry.notesKey] as? String?,
             let date = cloudKitRecord[Entry.dateKey] as? Date else {return nil}
         
         self.init(title: title, notes: notes, date: date)

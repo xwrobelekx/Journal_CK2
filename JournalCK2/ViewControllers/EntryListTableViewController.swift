@@ -16,6 +16,11 @@ class EntryListTableViewController: UITableViewController {
     //MARK: - Life Cycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: EntryController.shared.entriesWereChangedNotification, object: nil)
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        EntryController.shared.fetchRecordsFromiCloud()
 
     }
     
@@ -81,5 +86,15 @@ class EntryListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    //MARK: - Helper Function
+    
+    @objc func updateViews(){
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            self.tableView.reloadData()
+        }
+    }
 
 }

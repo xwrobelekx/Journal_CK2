@@ -25,5 +25,11 @@ class EntryDetailViewController: UIViewController {
 
     //MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let title = entryTitleTextField.text,
+            title != "" else {return}
+        let entry = Entry(title: title, notes: entryNotesTextField.text)
+        
+        EntryController.shared.saveToiCloud(entry: entry)
+        navigationController?.popViewController(animated: true)
     }
 }
