@@ -12,6 +12,11 @@
 		3B25139F2159808900AE346A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B25139E2159808900AE346A /* Assets.xcassets */; };
 		3B2513A22159808900AE346A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2513A02159808900AE346A /* LaunchScreen.storyboard */; };
 		3B2513AC2159809400AE346A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2513AB2159809400AE346A /* CloudKit.framework */; };
+		3B2513B22159840600AE346A /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2513B12159840600AE346A /* EntryListTableViewController.swift */; };
+		3B2513B42159841800AE346A /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2513B32159841800AE346A /* EntryDetailViewController.swift */; };
+		3B2513B62159842300AE346A /* Entry Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2513B52159842300AE346A /* Entry Controller.swift */; };
+		3B2513B92159843900AE346A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2513B82159843900AE346A /* Entry.swift */; };
+		3B2513BE215984BE00AE346A /* Date Formater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2513BD215984BE00AE346A /* Date Formater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		3B2513A32159808900AE346A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B2513A92159809200AE346A /* JournalCK2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JournalCK2.entitlements; sourceTree = "<group>"; };
 		3B2513AB2159809400AE346A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3B2513B12159840600AE346A /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
+		3B2513B32159841800AE346A /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		3B2513B52159842300AE346A /* Entry Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry Controller.swift"; sourceTree = "<group>"; };
+		3B2513B82159843900AE346A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		3B2513BD215984BE00AE346A /* Date Formater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date Formater.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				3B2513A92159809200AE346A /* JournalCK2.entitlements */,
+				3B2513B72159842A00AE346A /* Model */,
 				3B2513AD215980A300AE346A /* UI */,
 				3B2513AF215980CC00AE346A /* ViewControllers */,
 				3B2513B0215980DF00AE346A /* ModelController */,
+				3B2513BA2159849800AE346A /* Helpers */,
 				3B2513AE215980AE00AE346A /* Resources */,
 			);
 			path = JournalCK2;
@@ -96,6 +108,8 @@
 		3B2513AF215980CC00AE346A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3B2513B12159840600AE346A /* EntryListTableViewController.swift */,
+				3B2513B32159841800AE346A /* EntryDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -103,8 +117,25 @@
 		3B2513B0215980DF00AE346A /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				3B2513B52159842300AE346A /* Entry Controller.swift */,
 			);
 			path = ModelController;
+			sourceTree = "<group>";
+		};
+		3B2513B72159842A00AE346A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B2513B82159843900AE346A /* Entry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B2513BA2159849800AE346A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3B2513BD215984BE00AE346A /* Date Formater.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,7 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2513BE215984BE00AE346A /* Date Formater.swift in Sources */,
+				3B2513B92159843900AE346A /* Entry.swift in Sources */,
+				3B2513B22159840600AE346A /* EntryListTableViewController.swift in Sources */,
+				3B2513B42159841800AE346A /* EntryDetailViewController.swift in Sources */,
 				3B2513982159808800AE346A /* AppDelegate.swift in Sources */,
+				3B2513B62159842300AE346A /* Entry Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
